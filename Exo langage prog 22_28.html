@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <metacharset="utf-8">
+        <title>Exo Syntaxe</title>
+    </head>
+    <body>
+        <script>
+            alert("22 23 24 25 26 27 28" )
+            //permet un message pop up avec les chiffres de 22 à 28
+
+            let x;
+            for (x=22;x<29;x++)
+            alert (x)
+            //permet un pop up qui affiche 22, \
+            //puis un autre pop up qui affiche 23 et ainsi de suite
+
+
+            function calcul() {
+                var num = "";
+                    for (x=22;x<29;x++){
+                        num +=x+' ';
+                        //console.log(num) à ce niveau le console.log est inclus dans l'itération je vais donc avoir un resultat 22 suivi de 22 23 et ainsi de suite
+                    }
+                    return num //return permet de mettre fin à la fonction en utilisant la dernière itération de la boucle. Permet de sortir la valeur finale.
+            }
+
+            alert(calcul()) //appel la fonction calcul au sein de l'alerte. On a donc un pop up avec 22 23 24 etc ecrit dans la fenetre
+
+
+            function calcul() {
+                var num = "";
+                    for (x=22;x<29;x++){
+                        num +=x+' ';
+                        //console.log(num) à ce niveau le console.log est inclus dans l'itération je vais donc avoir un resultat 22 suivi de 22 23 et ainsi de suite
+                    }
+                    return num //return permet de mettre fin à la fonction en utilisant la dernière itération de la boucle. Permet de sortir la valeur finale.
+            }
+
+            alert(calcul()) //appel la fonction calcul au sein de l'alerte. On a donc un pop up avec 22 23 24 etc ecrit dans la fenetre
+
+            
+
+            
+        </script>
+    </body>
+</html>

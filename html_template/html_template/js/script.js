@@ -2,6 +2,7 @@ function askName() {
     
     const message = '\ud83d\udc4b Bonjour'
     var prenom = window.prompt('quel est ton pr\351nom?')
+    //prompt tout seul pour un navigateur marche aussi. 
 
     document.body.innerHTML += '<h2>' + message + ' ' + prenom + '</h2>';
 }
@@ -18,5 +19,3 @@ function askBirthYear() {
 
 askName()
 askBirthYear()
-
-
