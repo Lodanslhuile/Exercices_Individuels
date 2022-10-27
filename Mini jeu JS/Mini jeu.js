@@ -1,42 +1,50 @@
-function EnterNumber() {
-   var EnterNumber = window.prompt("Entrer un nombre");
-   return EnterNumber // penser à return pour pouvoir utiliser la valeur en dehors de la fonction
+//flux d'exécution = fe
+function player1(){
+    var player1 = window.prompt("Joueur 1 : Entrer un nombre de 0 à 50");
+    return player1 
+}
+let player1Number = player1() // fe-01
+
+function guessNumber() {    //fe-05
+   var guessNumber = window.prompt("Joueur 2 : Entrer un nombre de 0 à 50");
+   return guessNumber 
 }
 
 
-function didIWin(givenNumber){ 
-    let message
-    let result = false // on définit une variable false par défaut pour pouvoir l'utiliser plus tard.
+function didIWin(givenNumber){ //f-07
+    let message //f-08
+    let result = false //f-09
 
-    if (givenNumber == 22){
+    if (givenNumber == player1Number){ 
         message = "Bravo ! Vous avez deviné le nombre"
-        result = true // ici on explique que dans ce cas le resultat est true vs les autres resultats qui sont false.
+        result = true //f-10 ça s'arrête là si true
     
-    } else if (givenNumber < 22){
-        message = "Plus grand!"
+    } else if (givenNumber < player1Number){
+        message = "Plus grand!" //f-11
         
-    } else if (givenNumber > 22){
-        message = "Plus petit!"
+    } else if (givenNumber > player1Number){
+        message = "Plus petit!"//f11 bis et retour à l'étape f07 si false
         
     }
     alert(message)
 
-    return result // on fait un return pour pouvoir récupérer le resultat et l'utiliser en dehors de la fonction.
+    return result // ce résultat sera assigné en ligne 41 à la variable result2
 }
+
 
 function gameplay(){
-   
-    let result2 = false // on définit une nouvelle variable qui sera utilisée pour assigner pus tard le resultat true/false de la fonction didIwin.
+    
+    let result2 = false //fe-03
     
     do {
-        let userNumber = EnterNumber()
-        result2 = didIWin (userNumber) // attention à ne pas écrire "let results2" sinon ne comprend pas qu'il s'agit de la variable déclarée ligne 29. 
+        let userNumber = guessNumber() //fe-04
+        result2 = didIWin(userNumber) //fe-06 
     }
-    while (result2 == false) // refaire la boucle tant que le résultat est false.
+    while (result2 == false) 
 
 }
 
-gameplay()
+gameplay() //fe-02
 
 
 
