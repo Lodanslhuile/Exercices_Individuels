@@ -1,21 +1,62 @@
 function askName() {
-    
-    const message = '\ud83d\udc4b Bonjour'
-    var prenom = window.prompt('quel est ton pr\351nom?')
-    //prompt tout seul pour un navigateur marche aussi. 
+    const name = prompt("Comment tu t'appelles ?")
+    const greetings = "\ud83d\udc4b Hello " + name
 
-    document.body.innerHTML += '<h2>' + message + ' ' + prenom + '</h2>';
+    document.getElementById("name").innerText = greetings
 }
 
 function askBirthYear() {
-    var naissance = Number(window.prompt('quelle est ton ann\351e de naissance?'));
-    
-    var aujd = new Date();
-    var year = aujd.getFullYear();
-    var age = year - naissance
+    const birthYear = prompt('Quelle est ton année de naissance ?')
+    const birthMonth = prompt('Quelle est ton mois de naissance ?')
 
-    document.body.innerHTML += '<h3> Vous avez ' + age + ' ans</h3>';
+    const today = new Date()
+    const currentYear = today.getFullYear()
+    const currentMonth = today.getMonth() + 1
+
+    let age = currentYear - birthYear
+
+    if (birthMonth > currentMonth) {
+        age = age - 1
+        // age -= 1
+        // age--
+    }
+
+    let birthYearMessage = "Vous avez " + age + " ans"
+
+    if (birthMonth != currentMonth) {
+
+        let monthNumber = (12 + currentMonth - birthMonth ) % 12
+        
+        // if (birthMonth < currentMonth) {
+        //     monthNumber = currentMonth - birthMonth
+        // }
+
+        birthYearMessage += " et " + monthNumber + " mois"
+    }
+
+    // let monthNumber;
+
+    // if (birthMonth > currentMonth) {
+
+    //     monthNumber = 12 + currentMonth - birthMonth
+    // }
+    // else if (birthMonth < currentMonth) {
+
+    //     monthNumber = currentMonth - birthMonth
+    // }
+
+    // if (birthMonth != currentMonth) {
+    //     birthYearMessage += " et " + monthNumber + " mois"
+    // }
+
+    document.getElementById("age").innerText = birthYearMessage
 }
 
 askName()
 askBirthYear()
+
+
+
+
+
+
