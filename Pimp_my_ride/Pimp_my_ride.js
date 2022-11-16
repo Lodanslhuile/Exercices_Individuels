@@ -36,3 +36,17 @@ function parseTrips(trips) {
 parseTrips(tripsToParse)
 
 console.log(parseTrips(tripsToParse))
+
+let tripsToParse_Final_Array = parseTrips(tripsToParse) // variable permettant de stocker le résultat de la fonction parseTrips(trips)
+
+function getTripsPrice(voyages){
+	let sum = 0
+	for (i=0; i<voyages.length;i++){
+		sum+=parseInt(voyages[i].price)
+	}
+	return sum
+}
+
+getTripsPrice(tripsToParse_Final_Array)
+
+console.log(getTripsPrice(tripsToParse_Final_Array)) 
