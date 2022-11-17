@@ -50,3 +50,16 @@ function getTripsPrice(voyages){
 getTripsPrice(tripsToParse_Final_Array)
 
 console.log(getTripsPrice(tripsToParse_Final_Array)) 
+
+function checkCompatibility(tripA,tripB){
+
+	if (parseInt(tripB.start) >= (parseInt(tripA.start)+ parseInt(tripA.duration))){ //attention à bien transformer en entier avec parseInt
+		return true
+	}else if ((parseInt(tripB.start)+ parseInt(tripB.duration)) <= (parseInt(tripA.start))){
+		return true
+	}else{
+		return false
+	}
+}
+
+console.log(checkCompatibility(tripsToParse_Final_Array[3],tripsToParse_Final_Array[1]))
