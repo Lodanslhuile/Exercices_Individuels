@@ -27,4 +27,21 @@ function createDeck () {
     return cards
 }
 
-console.log(createDeck())
+
+//Etape 2 :
+
+const deck = createDeck()
+
+console.log(deck)
+
+function deal (cardsDealed) {
+    /*splice permet de retirer des éléments du tableau 
+    premier chiffre indique où on se place pour retirer. 
+    le deuxième c'est le nombre d'éléments à retirer.*/
+    let cards = deck.splice(0,cardsDealed)
+    return cards
+}
+
+const player1 = console.log("player1 " + deal(2))
+const player2 = console.log ("player2 "+ deal(2))
+console.log ("new " + deck) 
